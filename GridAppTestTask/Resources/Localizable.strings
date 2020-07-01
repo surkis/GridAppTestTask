@@ -1,0 +1,5 @@
+
+// MARK: Api Error
+"error_api_data_not_found" = "Not found data by request.";
+"error_api_network_request" = "Network request error - no other information.";
+"error_api_data_not_parsing" = "Data not parsing by request.";

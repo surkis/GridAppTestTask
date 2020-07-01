@@ -145,10 +145,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `MainItemCollectionViewCell`.
+    static let mainItemCollectionViewCell = _R.nib._MainItemCollectionViewCell()
     /// Nib `MainViewController`.
     static let mainViewController = _R.nib._MainViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MainItemCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.mainItemCollectionViewCell) instead")
+    static func mainItemCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.mainItemCollectionViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "MainViewController", in: bundle)`
@@ -158,8 +168,76 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func mainItemCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MainItemCollectionViewCell? {
+      return R.nib.mainItemCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MainItemCollectionViewCell
+    }
+
     static func mainViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.mainViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `MainItemCollectionViewCell`.
+    static let mainItemCollectionViewCell: Rswift.ReuseIdentifier<MainItemCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "MainItemCollectionViewCell")
+
+    fileprivate init() {}
+  }
+
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
+    struct localizable {
+      /// Value: Data not parsing by request.
+      static let error_api_data_not_parsing = Rswift.StringResource(key: "error_api_data_not_parsing", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Network request error - no other information.
+      static let error_api_network_request = Rswift.StringResource(key: "error_api_network_request", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Not found data by request.
+      static let error_api_data_not_found = Rswift.StringResource(key: "error_api_data_not_found", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Data not parsing by request.
+      static func error_api_data_not_parsing(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("error_api_data_not_parsing", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "error_api_data_not_parsing"
+        }
+
+        return NSLocalizedString("error_api_data_not_parsing", bundle: bundle, comment: "")
+      }
+
+      /// Value: Network request error - no other information.
+      static func error_api_network_request(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("error_api_network_request", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "error_api_network_request"
+        }
+
+        return NSLocalizedString("error_api_network_request", bundle: bundle, comment: "")
+      }
+
+      /// Value: Not found data by request.
+      static func error_api_data_not_found(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("error_api_data_not_found", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "error_api_data_not_found"
+        }
+
+        return NSLocalizedString("error_api_data_not_found", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
     }
 
     fileprivate init() {}
@@ -187,6 +265,20 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _MainItemCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = MainItemCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "MainItemCollectionViewCell"
+      let name = "MainItemCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MainItemCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MainItemCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _MainViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "MainViewController"
