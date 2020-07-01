@@ -88,7 +88,6 @@
 				ACF829691E768FE808F445B4 /* Pods-GridAppTestTask.debug.xcconfig */,
 				82ABF393614423F6EBBF77CD /* Pods-GridAppTestTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,6 +99,7 @@
 			buildConfigurationList = 14E8F2D224ACB98200D17D2B /* Build configuration list for PBXNativeTarget "GridAppTestTask" */;
 			buildPhases = (
 				90226C0DFCF36C547A5541A2 /* [CP] Check Pods Manifest.lock */,
+				14E8F2D524ACBB9900D17D2B /* SwiftLint */,
 				14E8F2BA24ACB98100D17D2B /* Sources */,
 				14E8F2BB24ACB98100D17D2B /* Frameworks */,
 				14E8F2BC24ACB98100D17D2B /* Resources */,
@@ -160,6 +160,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		14E8F2D524ACBB9900D17D2B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config \"$SRCROOT/.swiftlint.yml\"\n";
+		};
 		90226C0DFCF36C547A5541A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
