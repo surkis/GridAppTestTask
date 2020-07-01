@@ -6,6 +6,7 @@ inhibit_all_warnings!
 target 'GridAppTestTask' do
     
     pod 'SwiftLint'
+    pod 'R.swift'
 
 end
 

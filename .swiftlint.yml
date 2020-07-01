@@ -10,6 +10,7 @@ disabled_rules:
  
 excluded:
   - Pods
+  - GridAppTestTask/Resources/R.generated.swift
 
 line_length:
   warning: 120
