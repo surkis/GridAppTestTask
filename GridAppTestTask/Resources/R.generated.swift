@@ -189,12 +189,14 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
     struct localizable {
       /// Value: Data not parsing by request.
       static let error_api_data_not_parsing = Rswift.StringResource(key: "error_api_data_not_parsing", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Error
       static let alert_error_title = Rswift.StringResource(key: "alert_error_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Letest Movies
+      static let main_page_title = Rswift.StringResource(key: "main_page_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Network request error - no other information.
       static let error_api_network_request = Rswift.StringResource(key: "error_api_network_request", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Not found data by request.
@@ -226,6 +228,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("alert_error_title", bundle: bundle, comment: "")
+      }
+
+      /// Value: Letest Movies
+      static func main_page_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("main_page_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "main_page_title"
+        }
+
+        return NSLocalizedString("main_page_title", bundle: bundle, comment: "")
       }
 
       /// Value: Network request error - no other information.

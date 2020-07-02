@@ -19,9 +19,12 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="037-A1-z8W">
                         <rect key="frame" x="0.0" y="0.0" width="258" height="291"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="037-A1-z8W" secondAttribute="height" multiplier="500:750" priority="999" id="8Pm-TP-1jw"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="5"/>
+                                <integer key="value" value="10"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>

@@ -12,7 +12,7 @@ struct ApiNowPlayingRequest: ApiRequest {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         components.queryItems = [
             URLQueryItem(name: "api_key", value: Constants.API.apiKey),
-            URLQueryItem(name: "page", value: "\(page)"),
+            URLQueryItem(name: "page", value: "\(page)")
         ]
         var request = URLRequest(url: components.url!)
         

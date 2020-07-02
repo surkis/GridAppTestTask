@@ -1,11 +1,11 @@
 import UIKit
 import SDWebImage
 
-protocol MainItemCollectionCellType: BaseViewModelCellType {
+protocol MainItemCellType: BaseViewModelCellType {
     
 }
 
-class MainItemCollectionViewCell: UICollectionViewCell, MainItemCollectionCellType {
+class MainItemCollectionViewCell: UICollectionViewCell, MainItemCellType {
     
     @IBOutlet weak var imgViewContent: UIImageView!
     
@@ -15,7 +15,7 @@ class MainItemCollectionViewCell: UICollectionViewCell, MainItemCollectionCellTy
 
     
     func setup(viewModel: ModelViewProtocol) {
-        guard let model = viewModel as? MoviItemModelView else {
+        guard let model = viewModel as? MovieItemModelView else {
             return
         }
         imgViewContent.sd_imageIndicator = SDWebImageActivityIndicator.gray

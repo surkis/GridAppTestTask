@@ -1,7 +1,8 @@
 import UIKit
 
 protocol MainView: BaseView {
-    
+    func displayTitle(title: String)
+    func updateContent()
 }
 
 class MainViewController: BaseViewController, MainView {
@@ -30,6 +31,15 @@ class MainViewController: BaseViewController, MainView {
         collectionView.register(R.nib.mainItemCollectionViewCell)
     }
     
+    // MARK: display methods
+    func displayTitle(title: String) {
+        self.title = title
+    }
+    
+    func updateContent() {
+        self.collectionView.reloadData()
+    }
+    
     // MARK: make method
     class func make(configurator: MainConfigurator) -> MainViewController {
         let mainVC = MainViewController()
@@ -42,15 +52,19 @@ class MainViewController: BaseViewController, MainView {
 // MARK: - extension: UICollectionViewDelegate, UICollectionViewDataSource
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return presenter.numberOfSections()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return presenter.numberOfRows(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.mainItemCollectionViewCell,
                                                       for: indexPath)!
-        
+        presenter.configure(cellView: cell, for: indexPath)
         return cell
     }
 
