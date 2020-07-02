@@ -20,15 +20,13 @@ class MainViewController: BaseViewController, MainView {
         setupUIContent()
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-    
     // MARK: sutup UI
     private func setupUIContent() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(R.nib.mainItemCollectionViewCell)
+        collectionView.register(R.nib.footerCollectionReusableView,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter)
     }
     
     // MARK: display methods
@@ -67,5 +65,28 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         presenter.configure(cellView: cell, for: indexPath)
         return cell
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.selectItem(by: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        let footerView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: R.nib.footerCollectionReusableView,
+            for: indexPath
+        )!
+        footerView.delegate = self
+        return footerView
+    }
 }
+
+// MARK: - extension: FooterCollectionViewDelegate
+extension MainViewController: FooterCollectionViewDelegate {
+    
+    func didSelect(_ view: FooterCollectionReusableView) {
+        presenter.actionMore()
+    }
+}
+ 

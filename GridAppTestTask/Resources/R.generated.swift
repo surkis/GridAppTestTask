@@ -145,12 +145,32 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
+    /// Nib `DetailsViewController`.
+    static let detailsViewController = _R.nib._DetailsViewController()
+    /// Nib `FooterCollectionReusableView`.
+    static let footerCollectionReusableView = _R.nib._FooterCollectionReusableView()
     /// Nib `MainItemCollectionViewCell`.
     static let mainItemCollectionViewCell = _R.nib._MainItemCollectionViewCell()
     /// Nib `MainViewController`.
     static let mainViewController = _R.nib._MainViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DetailsViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.detailsViewController) instead")
+    static func detailsViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.detailsViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FooterCollectionReusableView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.footerCollectionReusableView) instead")
+    static func footerCollectionReusableView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.footerCollectionReusableView)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "MainItemCollectionViewCell", in: bundle)`
@@ -168,6 +188,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func detailsViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.detailsViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func footerCollectionReusableView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FooterCollectionReusableView? {
+      return R.nib.footerCollectionReusableView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FooterCollectionReusableView
+    }
+
     static func mainItemCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MainItemCollectionViewCell? {
       return R.nib.mainItemCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MainItemCollectionViewCell
     }
@@ -179,8 +207,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `FooterCollectionReusableView`.
+    static let footerCollectionReusableView: Rswift.ReuseIdentifier<FooterCollectionReusableView> = Rswift.ReuseIdentifier(identifier: "FooterCollectionReusableView")
     /// Reuse identifier `MainItemCollectionViewCell`.
     static let mainItemCollectionViewCell: Rswift.ReuseIdentifier<MainItemCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "MainItemCollectionViewCell")
 
@@ -310,6 +340,31 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _DetailsViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "DetailsViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FooterCollectionReusableView: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = FooterCollectionReusableView
+
+      let bundle = R.hostingBundle
+      let identifier = "FooterCollectionReusableView"
+      let name = "FooterCollectionReusableView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FooterCollectionReusableView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FooterCollectionReusableView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _MainItemCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = MainItemCollectionViewCell
 

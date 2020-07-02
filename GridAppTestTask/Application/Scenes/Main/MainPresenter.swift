@@ -7,6 +7,8 @@ protocol MainPresenter {
     func numberOfSections() -> Int
     func numberOfRows(section: Int) -> Int
     func configure(cellView: BaseViewModelCellType, for indexPath: IndexPath)
+    func selectItem(by indexPath: IndexPath)
+    func actionMore()
 }
 
 class MainPresenterImpl: MainPresenter {
@@ -66,5 +68,17 @@ class MainPresenterImpl: MainPresenter {
         let model = models[indexPath.row]
         let modelView = MovieItemModelView(identifier: model.identifier, posterURL: model.posterURL)
         mainCell.setup(viewModel: modelView)
+    }
+    
+    func selectItem(by indexPath: IndexPath) {
+        let model = models[indexPath.row]
+        DispatchQueue.main.async {
+            self.router.showDetails(by: model)
+        }
+    }
+    
+    func actionMore() {
+        currentPoge += 1
+        loadList(page: currentPoge)
     }
 }
