@@ -9,4 +9,5 @@ struct MovieModel {
     var isAdult: Bool
     var isVideo: Bool
     var backdropPath: String?
+    var voteAverage: Double
 }

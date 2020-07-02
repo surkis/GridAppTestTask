@@ -5,6 +5,7 @@ struct ApiMovieModel: Decodable {
     var identifier: Int
     var title: String
     var overview: String
+    var voteAverage: Double
     var releaseDate: Date
     var posterPath: String?
     var isAdult: Bool
@@ -20,6 +21,7 @@ struct ApiMovieModel: Decodable {
         case isAdult = "adult"
         case isVideo = "video"
         case backdropPath = "backdrop_path"
+        case voteAverage = "vote_average"
     }
     
     init(from decoder: Decoder) throws {
@@ -32,6 +34,7 @@ struct ApiMovieModel: Decodable {
         isAdult = try container.decode(Bool.self, forKey: .isAdult)
         isVideo = try container.decode(Bool.self, forKey: .isVideo)
         backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
+        voteAverage = try container.decode(Double.self, forKey: .voteAverage)
     }
     
     var posterURL: URL? {
@@ -68,7 +71,8 @@ extension ApiMovieModel: DomainConvertibleType {
             posterURL: posterURL,
             isAdult: isAdult,
             isVideo: isVideo,
-            backdropPath: backdropPath
+            backdropPath: backdropPath,
+            voteAverage: voteAverage
         )
     }
 }

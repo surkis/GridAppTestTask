@@ -18,7 +18,16 @@
 		14CBEE1A24AE0ECE005EC7C1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE1924AE0ECE005EC7C1 /* BaseViewController.swift */; };
 		14CBEE1E24AE10A9005EC7C1 /* ModelViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE1D24AE10A9005EC7C1 /* ModelViewProtocol.swift */; };
 		14CBEE2024AE10CA005EC7C1 /* BaseViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE1F24AE10CA005EC7C1 /* BaseViewCellProtocol.swift */; };
-		14CBEE2524AE117A005EC7C1 /* MoviItemModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE2424AE117A005EC7C1 /* MoviItemModelView.swift */; };
+		14CBEE2524AE117A005EC7C1 /* MovieItemModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE2424AE117A005EC7C1 /* MovieItemModelView.swift */; };
+		14CBEE2924AE1B1F005EC7C1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE2724AE1B1F005EC7C1 /* DetailsViewController.swift */; };
+		14CBEE2A24AE1B1F005EC7C1 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CBEE2824AE1B1F005EC7C1 /* DetailsViewController.xib */; };
+		14CBEE2C24AE1B4C005EC7C1 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE2B24AE1B4C005EC7C1 /* DetailsPresenter.swift */; };
+		14CBEE2E24AE1B71005EC7C1 /* DetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE2D24AE1B71005EC7C1 /* DetailsConfigurator.swift */; };
+		14CBEE3024AE1B90005EC7C1 /* DetailsViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE2F24AE1B90005EC7C1 /* DetailsViewRouter.swift */; };
+		14CBEE3224AE2353005EC7C1 /* DetailsMovieModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE3124AE2353005EC7C1 /* DetailsMovieModelView.swift */; };
+		14CBEE3524AE2BB4005EC7C1 /* FooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE3324AE2BB4005EC7C1 /* FooterCollectionReusableView.swift */; };
+		14CBEE3624AE2BB4005EC7C1 /* FooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CBEE3424AE2BB4005EC7C1 /* FooterCollectionReusableView.xib */; };
+		14CBEE3824AE322E005EC7C1 /* ButtonRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEE3724AE322E005EC7C1 /* ButtonRound.swift */; };
 		14E8F2C224ACB98100D17D2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8F2C124ACB98100D17D2B /* AppDelegate.swift */; };
 		14E8F2C424ACB98100D17D2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8F2C324ACB98100D17D2B /* SceneDelegate.swift */; };
 		14E8F2CB24ACB98200D17D2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E8F2CA24ACB98200D17D2B /* Assets.xcassets */; };
@@ -54,7 +63,16 @@
 		14CBEE1924AE0ECE005EC7C1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		14CBEE1D24AE10A9005EC7C1 /* ModelViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewProtocol.swift; sourceTree = "<group>"; };
 		14CBEE1F24AE10CA005EC7C1 /* BaseViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewCellProtocol.swift; sourceTree = "<group>"; };
-		14CBEE2424AE117A005EC7C1 /* MoviItemModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviItemModelView.swift; sourceTree = "<group>"; };
+		14CBEE2424AE117A005EC7C1 /* MovieItemModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemModelView.swift; sourceTree = "<group>"; };
+		14CBEE2724AE1B1F005EC7C1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		14CBEE2824AE1B1F005EC7C1 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		14CBEE2B24AE1B4C005EC7C1 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		14CBEE2D24AE1B71005EC7C1 /* DetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsConfigurator.swift; sourceTree = "<group>"; };
+		14CBEE2F24AE1B90005EC7C1 /* DetailsViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewRouter.swift; sourceTree = "<group>"; };
+		14CBEE3124AE2353005EC7C1 /* DetailsMovieModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMovieModelView.swift; sourceTree = "<group>"; };
+		14CBEE3324AE2BB4005EC7C1 /* FooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionReusableView.swift; sourceTree = "<group>"; };
+		14CBEE3424AE2BB4005EC7C1 /* FooterCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCollectionReusableView.xib; sourceTree = "<group>"; };
+		14CBEE3724AE322E005EC7C1 /* ButtonRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRound.swift; sourceTree = "<group>"; };
 		14E8F2BE24ACB98100D17D2B /* GridAppTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridAppTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E8F2C124ACB98100D17D2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14E8F2C324ACB98100D17D2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +168,7 @@
 			children = (
 				14CBEE1C24AE1095005EC7C1 /* Protocols */,
 				14CBEE1224AE0B26005EC7C1 /* Convertion */,
+				14CBEE3724AE322E005EC7C1 /* ButtonRound.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -166,9 +185,22 @@
 		14CBEE2124AE1149005EC7C1 /* ModelViews */ = {
 			isa = PBXGroup;
 			children = (
-				14CBEE2424AE117A005EC7C1 /* MoviItemModelView.swift */,
+				14CBEE2424AE117A005EC7C1 /* MovieItemModelView.swift */,
+				14CBEE3124AE2353005EC7C1 /* DetailsMovieModelView.swift */,
 			);
 			path = ModelViews;
+			sourceTree = "<group>";
+		};
+		14CBEE2624AE1AF3005EC7C1 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				14CBEE2724AE1B1F005EC7C1 /* DetailsViewController.swift */,
+				14CBEE2824AE1B1F005EC7C1 /* DetailsViewController.xib */,
+				14CBEE2B24AE1B4C005EC7C1 /* DetailsPresenter.swift */,
+				14CBEE2D24AE1B71005EC7C1 /* DetailsConfigurator.swift */,
+				14CBEE2F24AE1B90005EC7C1 /* DetailsViewRouter.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		14E8F2B524ACB98100D17D2B = {
@@ -235,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				14CBEE1824AE0EBF005EC7C1 /* Base */,
+				14CBEE2624AE1AF3005EC7C1 /* Details */,
 				14E8F2EB24ACC64C00D17D2B /* Navigation */,
 				14E8F2DA24ACBE5700D17D2B /* Main */,
 			);
@@ -278,6 +311,8 @@
 			children = (
 				14E8F2EF24ACC9CE00D17D2B /* MainItemCollectionViewCell.swift */,
 				14E8F2F024ACC9CE00D17D2B /* MainItemCollectionViewCell.xib */,
+				14CBEE3324AE2BB4005EC7C1 /* FooterCollectionReusableView.swift */,
+				14CBEE3424AE2BB4005EC7C1 /* FooterCollectionReusableView.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -391,9 +426,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CBEE2A24AE1B1F005EC7C1 /* DetailsViewController.xib in Resources */,
 				14E8F2ED24ACC65500D17D2B /* Navigation.storyboard in Resources */,
 				14E8F2FC24ACCB7600D17D2B /* Localizable.strings in Resources */,
 				14E8F2F224ACC9CE00D17D2B /* MainItemCollectionViewCell.xib in Resources */,
+				14CBEE3624AE2BB4005EC7C1 /* FooterCollectionReusableView.xib in Resources */,
 				14E8F2CE24ACB98200D17D2B /* LaunchScreen.storyboard in Resources */,
 				14E8F2CB24ACB98200D17D2B /* Assets.xcassets in Resources */,
 				14E8F2E524ACC3D100D17D2B /* MainViewController.xib in Resources */,
@@ -489,12 +526,16 @@
 			files = (
 				14CBEE1E24AE10A9005EC7C1 /* ModelViewProtocol.swift in Sources */,
 				14E8F2FE24ACCCC300D17D2B /* ApiRequest.swift in Sources */,
+				14CBEE2924AE1B1F005EC7C1 /* DetailsViewController.swift in Sources */,
+				14CBEE2E24AE1B71005EC7C1 /* DetailsConfigurator.swift in Sources */,
+				14CBEE2C24AE1B4C005EC7C1 /* DetailsPresenter.swift in Sources */,
 				14E8F2F824ACCB0800D17D2B /* ApiResponse.swift in Sources */,
 				14E8F2E124ACC0E200D17D2B /* MainPresenter.swift in Sources */,
 				14CBEE1A24AE0ECE005EC7C1 /* BaseViewController.swift in Sources */,
 				14E8F2E724ACC42F00D17D2B /* Application.swift in Sources */,
-				14CBEE2524AE117A005EC7C1 /* MoviItemModelView.swift in Sources */,
+				14CBEE2524AE117A005EC7C1 /* MovieItemModelView.swift in Sources */,
 				14E8F2DC24ACBE7300D17D2B /* MainViewController.swift in Sources */,
+				14CBEE3224AE2353005EC7C1 /* DetailsMovieModelView.swift in Sources */,
 				14E8F2EA24ACC53800D17D2B /* R.generated.swift in Sources */,
 				14E8F30124ACCD3100D17D2B /* ApiMovieGateway.swift in Sources */,
 				14CBEE0524AE0166005EC7C1 /* Constants.swift in Sources */,
@@ -510,8 +551,11 @@
 				14E8F2C424ACB98100D17D2B /* SceneDelegate.swift in Sources */,
 				14CBEE1724AE0D6E005EC7C1 /* MovieGateway.swift in Sources */,
 				14CBEE0224AE011A005EC7C1 /* ApiNowPlayingRequest.swift in Sources */,
+				14CBEE3824AE322E005EC7C1 /* ButtonRound.swift in Sources */,
 				14CBEE1124AE0AB6005EC7C1 /* ListResultModel.swift in Sources */,
 				14E8F2F624ACCAEF00D17D2B /* ApiClient.swift in Sources */,
+				14CBEE3024AE1B90005EC7C1 /* DetailsViewRouter.swift in Sources */,
+				14CBEE3524AE2BB4005EC7C1 /* FooterCollectionReusableView.swift in Sources */,
 				14CBEE0A24AE0949005EC7C1 /* ApiListResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,7 +704,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GridAppTestTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -680,7 +724,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GridAppTestTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
