@@ -9,6 +9,7 @@ protocol MainPresenter {
     func configure(cellView: BaseViewModelCellType, for indexPath: IndexPath)
     func selectItem(by indexPath: IndexPath)
     func actionMore()
+    func refreshData()
 }
 
 class MainPresenterImpl: MainPresenter {
@@ -67,16 +68,16 @@ class MainPresenterImpl: MainPresenter {
     }
     
     func configure(cellView: BaseViewModelCellType, for indexPath: IndexPath) {
-        guard let mainCell = cellView as? MainItemCellType else {
+        guard let mainCell = cellView as? MainItemCellType, models.count > indexPath.item else {
             return
         }
-        let model = models[indexPath.row]
+        let model = models[indexPath.item]
         let modelView = MovieItemModelView(identifier: model.identifier, posterURL: model.posterURL)
         mainCell.setup(viewModel: modelView)
     }
     
     func selectItem(by indexPath: IndexPath) {
-        let model = models[indexPath.row]
+        let model = models[indexPath.item]
         DispatchQueue.main.async {
             self.router.showDetails(by: model)
         }
@@ -84,6 +85,12 @@ class MainPresenterImpl: MainPresenter {
     
     func actionMore() {
         currentPoge += 1
+        loadList(page: currentPoge)
+    }
+    
+    func refreshData() {
+        currentPoge = 1
+        models = []
         loadList(page: currentPoge)
     }
 }

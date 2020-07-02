@@ -11,6 +11,7 @@ class MainViewController: BaseViewController, MainView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: properties
+    private let refreshControl = UIRefreshControl()
     var presenter: MainPresenter!
 
     // MARK: life-cycle
@@ -24,9 +25,12 @@ class MainViewController: BaseViewController, MainView {
     private func setupUIContent() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.refreshControl = refreshControl
         collectionView.register(R.nib.mainItemCollectionViewCell)
         collectionView.register(R.nib.footerCollectionReusableView,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter)
+        
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
     // MARK: display methods
@@ -36,6 +40,11 @@ class MainViewController: BaseViewController, MainView {
     
     func updateContent() {
         self.collectionView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        presenter.refreshData()
     }
     
     // MARK: make method
