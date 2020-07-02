@@ -1,4 +1,7 @@
 PODS:
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
@@ -8,23 +11,26 @@ PODS:
   - SwiftLint (0.39.2)
 
 DEPENDENCIES:
+  - NVActivityIndicatorView
   - R.swift
   - SDWebImage (~> 5.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - NVActivityIndicatorView
     - R.swift
     - R.swift.Library
     - SDWebImage
     - SwiftLint
 
 SPEC CHECKSUMS:
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   SDWebImage: 112503ec94a5a2a41869503844a15e8d8f1ead5c
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 19fe3259c30af283f816c6dba319632587a98fe9
+PODFILE CHECKSUM: 5b7b4d854828fcee94a00fe6cecb34bb33610703
 
 COCOAPODS: 1.9.3

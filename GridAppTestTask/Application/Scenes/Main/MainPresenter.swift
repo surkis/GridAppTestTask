@@ -32,14 +32,19 @@ class MainPresenterImpl: MainPresenter {
     }
     
     private func loadList(page: Int) {
+        view?.displayLoading(isShow: true)
         movieGateway.loadList(page: page) { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
             case let .success(listReuslt):
                 print("listReuslt:", listReuslt)
-                self.addMovies(listReuslt.results)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.view?.displayLoading(isShow: false)
+                    self.addMovies(listReuslt.results)
+                }
             case let .failure(error):
                 DispatchQueue.main.async {
+                    self.view?.displayLoading(isShow: false)
                     self.view?.displayError(messsage: error.localizedDescription)
                 }
             }

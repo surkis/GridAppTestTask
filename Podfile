@@ -8,6 +8,7 @@ target 'GridAppTestTask' do
     pod 'SwiftLint'
     pod 'R.swift'
     pod 'SDWebImage', '~> 5.0'
-
+    pod 'NVActivityIndicatorView'
+    
 end
 
