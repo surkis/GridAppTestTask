@@ -1,10 +1,10 @@
 import UIKit
 
-protocol MainView: AnyObject {
+protocol MainView: BaseView {
     
 }
 
-class MainViewController: UIViewController, MainView {
+class MainViewController: BaseViewController, MainView {
      
     // MARK: IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!

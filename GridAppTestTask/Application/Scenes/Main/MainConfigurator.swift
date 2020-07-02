@@ -8,6 +8,10 @@ class MainConfiguratorImpl: MainConfigurator {
     func configurePresenter(viewController: MainViewController) -> MainPresenter {
         let router = MainViewRouterImpl(viewController: viewController)
         
-        return MainPresenterImpl(view: viewController, router: router)
+        return MainPresenterImpl(
+            view: viewController,
+            router: router,
+            movieGateway: MovieGatewayImpl(api: ApiMovieGatewayImpl())
+        )
     }
 }

@@ -1,6 +1,10 @@
 import Foundation
 
-struct ApiResponse<Response: Decodable> {
+protocol ApiDecodable {
+    static func decode(data: Data) throws -> Self
+}
+
+struct ApiResponse<Response: ApiDecodable> {
     let entity: Response
     let urlResponse: URLResponse
     let data: Data?
@@ -12,7 +16,7 @@ struct ApiResponse<Response: Decodable> {
             throw ApiError.dataNotFound
         }
         do {
-            self.entity = try JSONDecoder().decode(Response.self, from: data)
+            self.entity = try Response.decode(data: data)
         } catch {
             throw ApiParseError(error: error, urlResponse: urlResponse, data: data)
         }

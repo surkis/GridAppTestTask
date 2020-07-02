@@ -189,14 +189,18 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
     struct localizable {
       /// Value: Data not parsing by request.
       static let error_api_data_not_parsing = Rswift.StringResource(key: "error_api_data_not_parsing", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Error
+      static let alert_error_title = Rswift.StringResource(key: "alert_error_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Network request error - no other information.
       static let error_api_network_request = Rswift.StringResource(key: "error_api_network_request", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Not found data by request.
       static let error_api_data_not_found = Rswift.StringResource(key: "error_api_data_not_found", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: OK
+      static let alert_button_ok = Rswift.StringResource(key: "alert_button_ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
 
       /// Value: Data not parsing by request.
       static func error_api_data_not_parsing(preferredLanguages: [String]? = nil) -> String {
@@ -209,6 +213,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("error_api_data_not_parsing", bundle: bundle, comment: "")
+      }
+
+      /// Value: Error
+      static func alert_error_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("alert_error_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "alert_error_title"
+        }
+
+        return NSLocalizedString("alert_error_title", bundle: bundle, comment: "")
       }
 
       /// Value: Network request error - no other information.
@@ -235,6 +252,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("error_api_data_not_found", bundle: bundle, comment: "")
+      }
+
+      /// Value: OK
+      static func alert_button_ok(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("alert_button_ok", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "alert_button_ok"
+        }
+
+        return NSLocalizedString("alert_button_ok", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
